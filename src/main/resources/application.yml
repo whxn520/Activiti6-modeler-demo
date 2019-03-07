@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active: dev
+  #数据源配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#freemarker模板配置
+  freemarker:
+    suffix: .ftl
+    cache: false
+    charset: UTF-8
+    contentType: text/html
+    requestContextAttribute: ctx
+    templateEncoding: UTF-8
+    templateLoaderPath: classpath:/templates/
+    settings:
+      defaultEncoding: UTF-8
+      url_escaping_charset: UTF-8
+      locale: zh_CN
+  http:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+    activiti:
+      check-process-definitions: false
+
+server:
+  session:
+    timeout: 3600
+
+---
+#环境
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/activiti6?useUnicode=true&useSSL=false&amp;characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: 123456
+
+server:
+  port: 8080
