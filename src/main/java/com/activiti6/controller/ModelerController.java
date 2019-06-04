@@ -67,8 +67,8 @@ public class ModelerController{
     /**
      * 创建模型
      * @param response
-     * @param productId 决策配置ID
-     * @throws IOException
+     * @param name 模型名称
+     * @param key 模型key
      */
     @RequestMapping("/create")
     public void create(HttpServletResponse response,String name,String key) throws IOException {
